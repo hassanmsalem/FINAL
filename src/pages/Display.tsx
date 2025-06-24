@@ -224,7 +224,8 @@ export const Display = () => {
               <img
                 src={currentContent.content}
                 alt="Display content"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-black"
+                style={{ objectFit: 'contain', width: '100%', height: '100%', backgroundColor: 'black' }}
                 onError={(_e) => {
                   setDisplayState(prev => ({
                     ...prev,
@@ -253,22 +254,6 @@ export const Display = () => {
           </div>
         )}
       </div>
-
-      {/* Progress Indicator */}
-      {playlistContent.length > 1 && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex space-x-3">
-            {playlistContent.map((_, index) => (
-              <div
-                key={index}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === displayState.currentIndex ? 'bg-white' : 'bg-gray-600'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
