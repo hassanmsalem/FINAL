@@ -1,0 +1,19 @@
+{
+  "name": "websign-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "heroku-postbuild": "cd .. && npm install && npm run build",
+    "build": "cd .. && npm install && npm run build",
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.1"
+  }
+}
